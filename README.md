@@ -496,9 +496,9 @@ Output/
 
 # Author
 
-Mayukh Paul
+MAYUKH PAUL
 
-Indian Institute of Technology Kharagpur
+Indian Institute of Technology, Kharagpur
 
 ---
 # License
