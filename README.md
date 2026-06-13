@@ -106,10 +106,8 @@ Time,LeftAngle,RightAngle,AverageAngle
 ### Output Visualization
 
 
-
 Output/Height close to the surface.csv
 
----
 
 ## Technologies Used
 
