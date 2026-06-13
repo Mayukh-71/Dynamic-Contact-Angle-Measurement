@@ -93,6 +93,8 @@ Droplet resting on substrate
 
 ### Processed Frame
 
+![Demo](Debugs/Height%20close%20to%20the%20surface.gif)
+
 ![Result](Output/Height%20close%20to%20the%20surface(Image%201).png)
 
 Features displayed:
