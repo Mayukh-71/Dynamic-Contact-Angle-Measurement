@@ -87,13 +87,12 @@ Annotated Video Generation
 
 ### Original Frame
 
-```text
-Droplet resting on substrate
-```
+
+![Droplet resting on substrate](Debugs/Input_Height%20close%20to%20the%20surface.gif)
 
 ### Processed Frame
 
-![Demo](Debugs/Height%20close%20to%20the%20surface.gif)
+![Demo](Debugs/Height%20close%20to%20the%20surface%202.gif)
 
 ![Result](Output/Height%20close%20to%20the%20surface(Image%201).png)
 
