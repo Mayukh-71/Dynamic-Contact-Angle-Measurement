@@ -163,6 +163,7 @@ Stores experiment-specific configuration.
 ### Parameters
 
 - Input video filename
+- Output CheckDroplet Image filename
 - Baseline coordinates
 - Test frame number
 - Future experiment settings
@@ -171,6 +172,7 @@ Example:
 
 ```cpp
 config.filename
+config.outputname
 config.baseP1
 config.baseP2
 config.testFrame
@@ -376,7 +378,7 @@ results.csv
 
 ## PlotGraph.py
 
-Creates scientific plots directly from exported CSV files.
+Creates scientific plots directly from exported CSV files for user defined range.
 
 Generates:
 
