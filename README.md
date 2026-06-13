@@ -90,10 +90,7 @@ Outputs
 
 ### Annotated Contact Angle Detection
 
-
-```markdown
-(Output/Height close to the surface.png)
-```
+Output/Height close to the surface.png
 
 ### Angle Measurement Data
 
@@ -108,11 +105,9 @@ Time,LeftAngle,RightAngle,AverageAngle
 
 ### Output Visualization
 
-Place a graph or processed frame here:
 
-```markdown
-![Result](Output/Height close to the surface(Image 1).png)
-```
+
+Output/Height close to the surface.csv
 
 ---
 
