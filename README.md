@@ -495,7 +495,12 @@ Output/
 
 # Author
 
-Mayukh Paul  
+Mayukh Paul
+
 Indian Institute of Technology Kharagpur
 
-Project developed for automated dynamic contact angle analysis using OpenCV and C++.
+---
+# License
+
+This repository is intended for academic, educational, and research purposes.
+For reuse or collaboration, please contact the author.
