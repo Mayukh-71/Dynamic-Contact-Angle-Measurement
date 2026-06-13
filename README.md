@@ -170,10 +170,10 @@ Stores experiment-specific configuration.
 Example:
 
 ```cpp
-CONFIG.filename
-CONFIG.baseP1
-CONFIG.baseP2
-CONFIG.testFrame
+config.filename
+config.baseP1
+config.baseP2
+config.testFrame
 ```
 
 This allows all programs to use a common configuration file.
@@ -438,11 +438,11 @@ Input/
 Configure:
 
 ```cpp
-CONFIG.filename /(The name of the input video)
-CONFIG.outputname /(The name of the CheckDroplet output image)
-CONFIG.baseP1 /(The initial point of BaseLine)
-CONFIG.baseP2 /(The final point of Baseline)
-CONFIG.testFrame /(The frame of the input video at which the CheckDroplet image is generated)
+config.filename /(The name of the input video)
+config.outputname /(The name of the CheckDroplet output image)
+config.baseP1 /(The initial point of BaseLine)
+config.baseP2 /(The final point of Baseline)
+config.testFrame /(The frame of the input video at which the CheckDroplet image is generated)
 PlotGraph.filename /(The name of the input video)
 PlotGraph.start_row /(The starting point of graph)
 PlotGraph.end_row /(The end point of graph)
