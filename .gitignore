@@ -1,8 +1,1 @@
-*.exe
-*.csv
-*.mp4
-*.png
-*.jpg
-output/
-input/
 .vscode/
