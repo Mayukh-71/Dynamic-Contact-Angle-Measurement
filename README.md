@@ -1,507 +1,344 @@
-# Dynamic Contact Angle Measurement using Computer Vision
+# Dynamic Contact Angle Analyzer — Version 2
 
-![C++](https://img.shields.io/badge/C%2B%2B-17-blue)
-![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green)
-![Platform](https://img.shields.io/badge/Platform-Windows%207%20-lightgrey)
+A Windows desktop application for **dynamic contact-angle measurement and visualization using computer vision**. The application streamlines the experimental workflow, from loading a droplet video and inspecting its geometry to generating annotated videos, exporting measurements, and visualizing results through individual and mixed graphs.
 
-A computer vision based system for **automatic dynamic contact angle measurement** from droplet videos using custom BaseLine.
-
-The software processes experimental droplet videos, extracts the droplet contour, detects contact points with BaseLine and Contour, fits local tangents, calculates left and right contact angles, generates annotated videos, and exports time-resolved contact angle data for scientific analysis.
-
----
-
-## Project Overview
-
-Contact angle is one of the most important parameters used to characterize:
-
-- Surface wettability
-- Hydrophilicity and hydrophobicity
-- Droplet spreading
-- Surface energy
-- Coating performance
-- Microfluidic systems
-- Heat transfer applications
-
-Traditionally, contact angle measurements are performed manually, which is time-consuming and prone to human error.
-
-This project automates the entire workflow using OpenCV and C++.
+**Version:** 2  
+**Platform:** Windows  
+**Author:** Mayukh Paul  
+**Institution:** Indian Institute of Technology Kharagpur
 
 ---
 
-## Features
+## Table of Contents
 
-✔ Automatic droplet contour extraction
-
-✔ Contact point detection
-
-✔ Local tangent fitting using OpenCV `fitLine()`
-
-✔ Dynamic contact angle measurement
-
-✔ Left and right angle computation
-
-✔ Average contact angle calculation
-
-✔ Time-resolved analysis
-
-✔ CSV data export
-
-✔ Annotated image generation
-
-✔ Annotated video generation
-
-✔ Modular architecture
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Application Demonstration](#application-demonstration)
+- [Complete Workflow](#complete-workflow)
+- [Three Experiment Workflow](#1-three-experiment-workflow)
+- [Input Video and Geometry Preview](#2-input-video-and-geometry-preview)
+- [Video Processing](#3-video-processing)
+- [Processed Output and Data Export](#4-processed-output-and-data-export)
+- [Individual Graph Generation](#5-individual-graph-generation)
+- [Mixed Graph Generation](#6-mixed-graph-generation)
+- [Recommended Analysis Procedure](#recommended-analysis-procedure)
+- [Scientific Applications](#scientific-applications)
+- [Author](#author)
 
 ---
 
-## Processing Pipeline
+## Overview
 
-```text
-Input Video
-      │
-      ▼
-Frame Extraction
-      │
-      ▼
-Contour Detection
-      │
-      ▼
-Contact Point Detection
-      │
-      ▼
-Local Tangent Estimation
-      │
-      ▼
-Contact Angle Calculation
-      │
-      ▼
-CSV Export
-      │
-      ▼
-Annotated Video Generation
-```
+Contact angle is an important parameter for characterizing the interaction between a liquid droplet and a solid surface. Its evolution over time can provide insight into wetting dynamics, droplet spreading, and surface wettability.
+
+Manual measurement across a video can be tedious and inconsistent. Dynamic Contact Angle Analyzer provides a graphical workflow for processing experimental droplet videos, inspecting the measurement geometry, obtaining time-dependent contact-angle data, and visualizing experimental results.
+
+Version 2 integrates these tasks into a single desktop application, with support for **three experiment samples, independent processing workflows, video and CSV export, individual graphs, and mixed-graph comparisons**.
+
+The application is intended to support experimental analysis without requiring the user to operate the underlying processing tools directly.
+
+## Key Features
+
+- **Three-sample workflow:** Access and manage three experiment samples through one main window.
+- **Independent experiment handling:** Keep each sample's video, processing workflow, and results separate.
+- **Geometry preview:** Inspect the droplet and its geometric reference before full video processing.
+- **Dynamic contact-angle analysis:** Obtain left, right, and average contact-angle measurements over time.
+- **Processed video generation:** Review the analysis visually across video frames.
+- **CSV export:** Save measurement data for plotting and further analysis.
+- **Individual graph generation:** Visualize the measurements for a particular experiment.
+- **Mixed-graph generation:** Compare results from multiple experiments in a combined visualization.
+- **User-controlled exports:** Choose where to save processed videos and CSV files.
+- **Integrated graphical interface:** Perform the workflow through the application's pages and dialogs.
 
 ---
 
-## Example Output
+## Application Demonstration
 
-### Original Frame
+The following sections are reserved for representative outputs from Version 2. Add your own experimental media and graphs to the corresponding locations.
 
+### 1. Input Video
 
-![Droplet resting on substrate](Debugs/Input_Height%20close%20to%20the%20surface.gif)
+*Demonstrates the original experimental droplet video before processing.*
 
-### Processed Frame
+<!-- Add your input-video GIF at docs/images/input-video.gif -->
 
-![Demo](Debugs/Height%20close%20to%20the%20surface%202.gif)
+![Input droplet video](docs/images/input-video.gif)
 
-![Result](Output/Height%20close%20to%20the%20surface(Image%201).png)
+### 2. Geometry Preview — Processed Frame
 
-Features displayed:
+*Shows a representative frame illustrating the droplet geometry used for contact-angle analysis.*
 
-- Droplet contour
-- Baseline
-- Contact points
-- Apex
-- Tangents
-- Left contact angle
-- Right contact angle
-- Average contact angle
-- Time stamp
+<!-- Add your processed geometry image at docs/images/processed-geometry.png -->
 
----
+![Geometry preview](docs/images/processed-geometry.png)
 
-## Repository Structure
+### 3. Processed Video Output
 
-```text
-DynamicContactAngleMeasurement/
+*Demonstrates the annotated video generated after processing.*
 
-│
-├── Input/
-│   └── droplet.avi
-│
-├── Output/
-│   ├── droplet.png
-│   ├── results.csv
-│   ├── annotated_video.mp4
-│   └── average_angle_vs_time.png
-│
-├── config.h
-├── config.cpp
-│
-├── contour.h
-├── contour.cpp
-│
-├── angle.h
-├── angle.cpp
-│
-├── draw.h
-├── draw.cpp
-│
-├── csv.h
-├── csv.cpp
-│
-├── video.h
-├── video.cpp
-│
-├── CheckDroplet.cpp
-├── CreateVideo.cpp
-├── CreateCSV.cpp
-├── PlotGraph.py
-│
-└── README.md
-```
+<!-- Add your processed-video GIF at docs/images/processed-video.gif -->
+
+![Processed droplet video](docs/images/processed-video.gif)
+
+### 4. Individual Graph 1
+
+*Insert the first representative graph generated by the application.*
+
+<!-- Add your first individual graph at docs/images/individual-graph-1.png -->
+
+![Individual graph 1](docs/images/individual-graph-1.png)
+
+### 5. Individual Graph 2
+
+*Insert the second representative individual graph.*
+
+<!-- Add your second individual graph at docs/images/individual-graph-2.png -->
+
+![Individual graph 2](docs/images/individual-graph-2.png)
+
+### 6. Mixed Graph 1
+
+*Insert the first mixed graph demonstrating a comparison between experiments.*
+
+<!-- Add your first mixed graph at docs/images/mixed-graph-1.png -->
+
+![Mixed graph 1](docs/images/mixed-graph-1.png)
+
+### 7. Mixed Graph 2
+
+*Insert the second mixed graph.*
+
+<!-- Add your second mixed graph at docs/images/mixed-graph-2.png -->
+
+![Mixed graph 2](docs/images/mixed-graph-2.png)
 
 ---
 
-# Module Description
+## Complete Workflow
 
----
+The application opens directly into the **Three Experiment Workflow**.
 
-## config.h / config.cpp
+The general analysis sequence is:
 
-Stores experiment-specific configuration.
+1. Select an experiment sample.
+2. Load the corresponding input video.
+3. Inspect the droplet and geometry preview.
+4. Run the video-processing workflow.
+5. Review the processed output.
+6. Export the processed video and measurement CSV.
+7. Configure and generate individual graphs.
+8. Generate mixed graphs when comparing experiments.
+9. Repeat the process for the remaining samples as required.
 
-### Parameters
+The workflow separates experimental inputs and outputs while providing a common interface for processing, visualization, and export.
 
-- Input video filename
-- Output CheckDroplet Image filename
-- Baseline coordinates
-- Test frame number
-- Future experiment settings
+## 1. Three Experiment Workflow
 
-Example:
+The Three Experiment Workflow is the main entry point of Version 2. It provides access to three experiment samples from a single window.
 
-```cpp
-config.filename
-config.outputname
-config.baseP1
-config.baseP2
-config.testFrame
-```
+### Sample selection
 
-This allows all programs to use a common configuration file.
+Choose the sample you want to work with and follow its workflow to load a video, inspect its geometry, process the data, and review the results.
 
----
+Each sample has an independent working context. This allows different experimental videos or conditions to be analysed without deliberately combining their intermediate results.
 
-## contour.h / contour.cpp
+### Reset Video
 
-Responsible for droplet extraction.
+The **Reset Video** control allows the current sample's video workflow to be restarted when you want to select or process another input. After resetting, verify the selected video and geometry before proceeding.
 
-### Functions
+### Navigation
 
-- Binary image generation
-- Contour detection
-- Largest contour selection
-- Droplet contour extraction
-- Apex detection
-- Contact point detection
+The available navigation controls let you move between the stages of the sample workflow. Follow the sequence from video input and geometry inspection to processing, output review, and graphing.
 
-Output:
+**Purpose:** Keep multiple experiments organized and make it easier to analyse and compare separate experimental conditions.
 
-```text
-Droplet contour
-Apex point
-Left contact point
-Right contact point
-```
+## 2. Input Video and Geometry Preview
 
----
+This stage prepares the selected experiment for processing.
 
-## angle.h / angle.cpp
+### Input video
 
-Responsible for geometric analysis.
+Load the experimental recording containing the droplet and the solid surface. Check that the intended video is selected before continuing.
 
-### Functions
+The quality and framing of the input video influence how clearly the droplet boundary and contact region can be inspected.
 
-#### Tangent Estimation
+### Geometry preview
 
-Uses OpenCV:
+Use the geometry or preview workflow to inspect a representative frame and the geometric reference used in the measurement.
 
-```cpp
-fitLine()
-```
+The baseline represents the solid surface against which the contact angles are evaluated. The droplet boundary and its intersection with the baseline are important for locating the contact regions.
 
-to estimate local tangents around contact points.
+Inspecting the geometry before processing helps confirm that the intended droplet and surface are being analysed.
 
-#### Contact Angle Calculation
+### Why this stage matters
 
-Computes:
+Contact-angle measurements depend on the relationship between the droplet profile and the solid surface. A suitable geometric reference is therefore essential to interpreting the resulting angles.
 
-- Left contact angle
-- Right contact angle
-- Average contact angle
+The preview is used to inspect the measurement geometry; it is distinct from the final processed video generated by the application.
 
-using baseline and tangent vectors.
+## 3. Video Processing
 
-Output:
+Once the video and geometry have been prepared, start the processing operation for the selected sample.
 
-```text
-Left Angle
-Right Angle
-Average Angle
-```
+The application processes the recording to produce time-dependent measurements and visual output for review.
 
----
+The analysis concerns the droplet profile and the contact regions relative to the baseline. The processed visualization can include elements such as the droplet contour, contact points, local tangent construction, contact-angle annotations, and time information, depending on the output view.
 
-## draw.h / draw.cpp
+### Contact-angle measurements
 
-Creates professional visualizations.
+The application provides measurements for:
 
-### Features
+- **Left contact angle:** The angle evaluated at the left contact region.
+- **Right contact angle:** The angle evaluated at the right contact region.
+- **Average contact angle:** The average of the left and right contact-angle measurements.
 
-Draws:
+Studying these quantities over time helps reveal changes in droplet shape and wetting behaviour during the experiment.
 
-- Contour
-- Baseline
-- Contact points
-- Apex
-- Tangent lines
-- Angle information box
-- Legend box
-- Time stamp
+### After processing
 
-Output:
+Wait for processing to complete and inspect the generated output. If it does not correspond to the intended experiment, revisit the selected video and geometry settings before running the workflow again.
 
-```text
-Annotated Frame
-```
+## 4. Processed Output and Data Export
 
----
+The Processed Output page provides access to the results for the current sample.
 
-## csv.h / csv.cpp
+### Save Processed Video As
 
-Stores measurement results.
+Use **Save Processed Video As** to save the processed, annotated video to a location and filename of your choice.
 
-Exports:
+The video provides a visual record of the analysis across the recording and can be used for reviewing results, presentations, and experimental documentation.
 
-```csv
-Time,LeftAngle,RightAngle,AverageAngle
-```
+### Save CSV As
 
-for every frame.
+Use **Save CSV As** to export the measurement data as a CSV file.
 
-Output:
+The CSV provides a tabular representation of the measurements and can be used for graph generation, data inspection, and further scientific analysis.
 
-```text
-results.csv
-```
+### Back
 
----
+Use **Back** to return to the previous workflow stage.
 
-## video.h / video.cpp
+### Keeping outputs organized
 
-Handles video generation.
+Save each video and CSV with a filename that identifies its experiment or condition. Keeping the files associated with the correct sample helps prevent accidental mixing of measurements during graph generation and comparison.
 
-Creates:
+## 5. Individual Graph Generation
 
-```text
-annotated_video.mp4
-```
+The individual-graph workflow allows the user to visualize measurements from a selected experiment.
 
-from processed frames.
+### Graph configuration
 
-Uses:
+Open the graph-configuration page or dialog and specify the available plotting options. Select the intended data and review the settings presented by the application before generating the plot.
 
-```cpp
-cv::VideoWriter
-```
+Where the interface provides options such as a data range or other plot parameters, ensure they correspond to the intended analysis.
 
-for encoding and exporting videos.
+### Graph results
 
----
+After generation, inspect the graph in the results view. Verify that the plotted data belongs to the intended sample and that the axes and plotted quantities are suitable for interpretation.
 
-# Main Programs
+Individual graphs are useful for examining one experiment at a time, identifying trends, and preparing figures for reports or presentations.
 
----
+### Example outputs
 
+The two individual-graph slots above are intended for representative plots generated by Version 2. Captions should identify the plotted quantities, axis labels, and experimental condition.
 
-## CheckDroplet.cpp
+## 6. Mixed Graph Generation
 
-Single-frame debugging and validation.
+The mixed-graph workflow supports combined visualization of data from multiple experiments.
 
-Functions:
+### Workflow
 
-- Jump to selected frame
-- Verify contour detection
-- Verify tangent fitting
-- Verify contact angles
+1. Open the mixed-graph option.
+2. Select the experiment data and plotting options available in the dialog.
+3. Review the selected inputs and configuration.
+4. Generate the mixed graph.
+5. Inspect the result to verify that the intended experiments and quantities are being compared.
 
-Output:
+### Why mixed graphs are useful
 
-```text
-annotated_test.png
-```
+Individual graphs show the behaviour of a single experiment, while mixed graphs help compare trends across multiple experiments in one visualization.
 
-Useful for debugging and parameter tuning.
+Comparisons should use compatible quantities, units, and data selections. Clearly identifying each experiment in the resulting figure helps make the comparison easier to interpret.
 
----
+Use the two mixed-graph slots above to show representative outputs from the application.
 
-## CreateVideo.cpp
+## Recommended Analysis Procedure
 
-Video generation pipeline.
+For each experiment, the following checklist provides a consistent workflow:
 
-Functions:
+1. Select the required sample in the Three Experiment Workflow.
+2. Load and verify the input video.
+3. Inspect the geometry preview and measurement reference.
+4. Run the video-processing workflow.
+5. Review the processed output.
+6. Save the processed video using **Save Processed Video As**.
+7. Save the measurement data using **Save CSV As**.
+8. Configure and generate individual graphs.
+9. Inspect the graph results and verify the selected experiment.
+10. Repeat for the other samples as required.
+11. Generate mixed graphs when a comparison is needed.
+12. Keep exported files clearly labelled and associated with the correct experiment.
 
-- Read video
-- Generate annotations
-- Create output video
+## Scientific Applications
 
-Output:
+Dynamic contact-angle measurements can support experimental studies involving:
 
-```text
-annotated_video.mp4
-```
-
----
-## CreateCSV.cpp
-
-Primary processing pipeline.
-
-Functions:
-
-- Read video
-- Process all frames
-- Compute contact angles
-- Save CSV
-
-Output:
-
-```text
-results.csv
-```
-
----
-
-
-# Python Utilities
-
----
-
-## PlotGraph.py
-
-Creates scientific plots directly from exported CSV files for user defined range.
-
-Generates:
-
-```text
-Average Contact Angle vs Time
-```
-
-and can be extended for:
-
-- Left angle vs time
-- Right angle vs time
-- Comparative plots
-- Statistical analysis
-
-Output:
-
-```text
-average_angle_vs_time.png
-```
-
----
-
-# Installation
-
-## Dependencies
-
-### OpenCV
-
-Install OpenCV 4.x
-
-### Compiler
-
-- GCC
-- MinGW
-- MSYS2
-
-C++17 or later is required.
-
----
-
-# Build
-
-```bash
-g++ CheckDroplet.cpp contour.cpp angle.cpp draw.cpp config.cpp \-std=c++17 -o contact_angle.exe $(pkg-config --cflags --libs opencv4)
-g++ CreateVideo.cpp contour.cpp angle.cpp draw.cpp video.cpp config.cpp \-std=c++17 -o contact_angle.exe $(pkg-config --cflags --libs opencv4)
-g++ CreateCSV.cpp contour.cpp angle.cpp csv.cpp config.cpp \-std=c++17 -o contact_angle.exe $(pkg-config --cflags --libs opencv4)
-```
-
----
-
-# Usage
-
-Place the video inside:
-
-```text
-Input/
-```
-
-Configure:
-
-```cpp
-config.filename /(The name of the input video)
-config.outputname /(The name of the CheckDroplet output image)
-config.baseP1 /(The initial point of BaseLine)
-config.baseP2 /(The final point of Baseline)
-config.testFrame /(The frame of the input video at which the CheckDroplet image is generated)
-PlotGraph.filename /(The name of the input video)
-PlotGraph.start_row /(The starting point of graph)
-PlotGraph.end_row /(The end point of graph)
-```
-
-Run:
-
-```bash
-./contact_angle.exe
-```
-
-Generated outputs:
-
-```text
-Output/
-├── "outputname".png /(CheckDroplet.cpp)
-├── "filename".mp4 /(CreateVideo.cpp)
-├── "filename".csv /(CreateCSV.cpp)
-└── "filename".png /(PlotGraph.py)
-```
-
----
-
-# Applications
-
-- Wettability analysis
-- Surface engineering
-- Heat transfer research
-- Coating characterization
-- Energy systems
-- Droplet dynamics
-- Microfluidics
+- Surface wettability and wetting dynamics
+- Droplet spreading and motion
+- Surface engineering and coating characterization
 - Materials science
+- Microfluidics
+- Heat-transfer and related interfacial phenomena
+
+The application provides measurements and visualizations to support scientific investigation. Interpretation should account for image quality, experimental conditions, the chosen geometric reference, and the limitations of the measurement setup.
 
 ---
 
-# Future Improvements
+## Public Demonstration Repository
 
-- Automatic baseline detection
-- Dynamic graph overlay in video
-- GUI application
-- Batch video processing
-- Machine learning assisted contour detection
-- Real-time camera support
-- Multi-droplet tracking
+A public repository intended to demonstrate the application can contain the README and selected media without publishing the implementation.
+
+A suggested layout is:
+
+```text
+Dynamic-Contact-Angle-Analyzer/
+├── README.md
+└── docs/
+    └── images/
+        ├── input-video.gif
+        ├── processed-geometry.png
+        ├── processed-video.gif
+        ├── individual-graph-1.png
+        ├── individual-graph-2.png
+        ├── mixed-graph-1.png
+        └── mixed-graph-2.png
+```
+
+The image paths above are placeholders. Create the `docs/images/` folder and upload your images using the matching filenames, or update the Markdown paths to match your own filenames.
+
+### Keeping the implementation private
+
+For a public, demonstration-only repository, publish only material you are comfortable making public, such as this README and selected screenshots, GIFs, and graph images.
+
+**Do not commit:**
+
+- Application source code
+- C++ or Python backend executables
+- PyInstaller `.spec` files
+- Inno Setup `.iss` scripts
+- Setup or installer executables
+- Private experimental videos or data
+- Credentials, tokens, or other secrets
+
+A README and demonstration media document how the application works; they do not host the Windows desktop application as an interactive web application.
+
+Before publishing, review the files staged for the Git commit to ensure that no source code, installer, private data, or other unintended files are included.
 
 ---
 
-# Author
+## Author
 
-MAYUKH PAUL
+**Mayukh Paul**  
+Indian Institute of Technology Kharagpur
 
-Indian Institute of Technology, Kharagpur
-
----
-# License
-
-This repository is intended for academic, educational, and research purposes.
-For reuse or collaboration, please contact the author.
+*Dynamic Contact Angle Analyzer — Version 2*
