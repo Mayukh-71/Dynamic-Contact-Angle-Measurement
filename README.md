@@ -1,4 +1,4 @@
-# Dynamic Contact Angle Analyzer
+# Dynamic Contact Angle Analyzer — Version 2
 
 A Windows desktop application for **dynamic contact-angle measurement and visualization using computer vision**. The application streamlines the experimental workflow, from loading a droplet video and inspecting its geometry to generating annotated videos, exporting measurements, and visualizing results through individual and mixed graphs.
 
@@ -84,6 +84,14 @@ The GIFs above are the GIF versions of the processed videos. Keep the converted 
 **Mixed width graph**
 
 ![Mixed width graph](Output/mixed_width.png)
+
+### Processed videos — Samples 2 and 3
+
+![Processed video for Sample 2](Output/Sample%202.gif)
+
+![Processed video for Sample 3](Output/Sample%203.gif)
+
+> **GitHub video-size note:** GitHub does not display MP4 files inline in a README like it displays GIFs. The GIFs are included here for convenient previews; the original processed MP4 files can be retained locally or attached to a GitHub Release if you want to distribute them.
 
 ## Complete Workflow
 
@@ -179,4 +187,4 @@ A README and demonstration media document how the application works; they do not
 **Mayukh Paul**  
 Indian Institute of Technology Kharagpur
 
-*Dynamic Contact Angle Analyzer*
+*Dynamic Contact Angle Analyzer — Version 2*
