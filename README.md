@@ -178,4 +178,4 @@ The repository includes sample experimental videos, representative processed out
 **Mayukh Paul**  
 Indian Institute of Technology Kharagpur
 
-*Dynamic Contact Angle Analyzer — Version 2*
+*Dynamic Contact Angle Analyzer*
