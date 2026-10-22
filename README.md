@@ -1,4 +1,4 @@
-# Dynamic Contact Angle Analyzer — Version 2
+# Dynamic Contact Angle Analyzer
 
 A Windows desktop application for **dynamic contact-angle measurement and visualization using computer vision**. The application streamlines the experimental workflow, from loading a droplet video and inspecting its geometry to generating annotated videos, exporting measurements, and visualizing results through individual and mixed graphs.
 
@@ -56,14 +56,17 @@ Dynamic-Contact-Angle-Measurement/
 The GIFs above are the GIF versions of the processed videos. Keep the converted GIFs in `Output/` and use the exact filenames shown here. The geometry preview filename is a suggested name: the supplied ZIP did **not** contain a geometry-preview image, so add that image to `Output/` or update the path below to its actual filename.
 
 ## Application Demonstration
+### Input Video - Sample 1
 
-### Processed video — Sample 1
-
-![Processed video for Sample 1](Output/Sample%201.gif)
+![Input video for Sample 1](Input/Sample%201.gif)
 
 ### Geometry preview
 
 ![Geometry preview](Output/geometry_preview_sample_1.png)
+
+### Processed video — Sample 1
+
+![Processed video for Sample 1](Output/Sample%201.gif)
 
 ### Individual graphs — Sample 1
 
@@ -84,14 +87,6 @@ The GIFs above are the GIF versions of the processed videos. Keep the converted 
 **Mixed width graph**
 
 ![Mixed width graph](Output/mixed_width.png)
-
-### Processed videos — Samples 2 and 3
-
-![Processed video for Sample 2](Output/Sample%202.gif)
-
-![Processed video for Sample 3](Output/Sample%203.gif)
-
-> **GitHub video-size note:** GitHub does not display MP4 files inline in a README like it displays GIFs. The GIFs are included here for convenient previews; the original processed MP4 files can be retained locally or attached to a GitHub Release if you want to distribute them.
 
 ## Complete Workflow
 
@@ -166,21 +161,17 @@ Dynamic contact-angle measurements can support experimental studies involving:
 
 Interpretation should account for image quality, experimental conditions, the chosen geometric reference, and the limitations of the measurement setup.
 
-## Demonstration Video
+## Application Demonstration
 
-The full application demonstration video is approximately **1.48 GB**. Ordinary GitHub repository files are not suitable for files above 100 MB. Upload the video as an asset on a **GitHub Release** and link it here, or use Git LFS if you specifically need the video versioned with the repository.
+The following demonstration video provides an overview of the Dynamic Contact Angle Analyzer — Version 2, showcasing its graphical interface, experimental workflow, video processing, data export, and graph generation capabilities.
 
-Replace the link below once the video has been uploaded:
-
-[Watch or download the full application demonstration video](REPLACE_WITH_GITHUB_RELEASE_ASSET_URL)
+[**Watch the Application Demonstration Video**](https://drive.google.com/drive/folders/1G8pZ3rTfxJ2jgAJAWWt-amfHWm2Z-tmn)
 
 ## Public Demonstration Repository
 
-This repository is intended to demonstrate the application's workflow and representative outputs. It can contain the README, sample inputs, selected output media, CSVs, and graph images without publishing the implementation.
+This repository presents the **Dynamic Contact Angle Analyzer — Version 2**, a Windows desktop application developed to facilitate dynamic contact-angle measurement and visualization using computer vision.
 
-Before pushing changes, review the files staged for the Git commit. Do not commit application source code, backend executables, PyInstaller `.spec` files, Inno Setup `.iss` scripts, installers, credentials, tokens, or private experimental data unless you explicitly intend to publish them.
-
-A README and demonstration media document how the application works; they do not host the Windows desktop application as an interactive web application.
+The repository includes sample experimental videos, representative processed outputs, exported measurement data, and visualizations demonstrating the application's capabilities.
 
 ## Author
 
