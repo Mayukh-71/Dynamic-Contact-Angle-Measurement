@@ -1,4 +1,4 @@
-# Dynamic Contact Angle Analyzer — Version 2
+# Dynamic Contact Angle Analyzer
 
 A Windows desktop application for **dynamic contact-angle measurement and visualization using computer vision**. The application streamlines the experimental workflow, from loading a droplet video and inspecting its geometry to generating annotated videos, exporting measurements, and visualizing results through individual and mixed graphs.
 
@@ -9,33 +9,13 @@ A Windows desktop application for **dynamic contact-angle measurement and visual
 
 ---
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Application Demonstration](#application-demonstration)
-- [Complete Workflow](#complete-workflow)
-- [Three Experiment Workflow](#1-three-experiment-workflow)
-- [Input Video and Geometry Preview](#2-input-video-and-geometry-preview)
-- [Video Processing](#3-video-processing)
-- [Processed Output and Data Export](#4-processed-output-and-data-export)
-- [Individual Graph Generation](#5-individual-graph-generation)
-- [Mixed Graph Generation](#6-mixed-graph-generation)
-- [Recommended Analysis Procedure](#recommended-analysis-procedure)
-- [Scientific Applications](#scientific-applications)
-- [Author](#author)
-
----
-
 ## Overview
 
 Contact angle is an important parameter for characterizing the interaction between a liquid droplet and a solid surface. Its evolution over time can provide insight into wetting dynamics, droplet spreading, and surface wettability.
 
-Manual measurement across a video can be tedious and inconsistent. Dynamic Contact Angle Analyzer provides a graphical workflow for processing experimental droplet videos, inspecting the measurement geometry, obtaining time-dependent contact-angle data, and visualizing experimental results.
+Dynamic Contact Angle Analyzer provides a graphical workflow for processing experimental droplet videos, inspecting the measurement geometry, obtaining time-dependent contact-angle data, and visualizing experimental results.
 
-Version 2 integrates these tasks into a single desktop application, with support for **three experiment samples, independent processing workflows, video and CSV export, individual graphs, and mixed-graph comparisons**.
-
-The application is intended to support experimental analysis without requiring the user to operate the underlying processing tools directly.
+Version 2 supports three experiment samples, independent processing workflows, video and CSV export, individual graphs, and mixed-graph comparisons.
 
 ## Key Features
 
@@ -45,80 +25,75 @@ The application is intended to support experimental analysis without requiring t
 - **Dynamic contact-angle analysis:** Obtain left, right, and average contact-angle measurements over time.
 - **Processed video generation:** Review the analysis visually across video frames.
 - **CSV export:** Save measurement data for plotting and further analysis.
-- **Individual graph generation:** Visualize the measurements for a particular experiment.
-- **Mixed-graph generation:** Compare results from multiple experiments in a combined visualization.
-- **User-controlled exports:** Choose where to save processed videos and CSV files.
+- **Individual graph generation:** Visualize measurements for a particular experiment.
+- **Mixed-graph generation:** Compare results from multiple experiments in combined visualizations.
 - **Integrated graphical interface:** Perform the workflow through the application's pages and dialogs.
 
----
+## Repository Structure
+
+```text
+Dynamic-Contact-Angle-Measurement/
+├── README.md
+├── Input/
+│   ├── Sample 1.avi
+│   ├── Sample 2.avi
+│   └── Sample 3.avi
+├── Output/
+│   ├── Sample 1.gif
+│   ├── Sample 2.gif
+│   ├── Sample 3.gif
+│   ├── Sample 1.csv
+│   ├── Sample 2.csv
+│   ├── Sample 3.csv
+│   ├── contact_angle_sample_1.png
+│   ├── width_sample_1.png
+│   ├── mixed_contact_angle.png
+│   ├── mixed_width.png
+│   └── geometry_preview_sample_1.png
+└── [application demonstration video — see note below]
+```
+
+The GIFs above are the GIF versions of the processed videos. Keep the converted GIFs in `Output/` and use the exact filenames shown here. The geometry preview filename is a suggested name: the supplied ZIP did **not** contain a geometry-preview image, so add that image to `Output/` or update the path below to its actual filename.
 
 ## Application Demonstration
 
-The following sections are reserved for representative outputs from Version 2. Add your own experimental media and graphs to the corresponding locations.
+### Processed video — Sample 1
 
-### 1. Input Video
+![Processed video for Sample 1](Output/Sample%201.gif)
 
-*Demonstrates the original experimental droplet video before processing.*
+### Geometry preview
 
-<!-- Add your input-video GIF at docs/images/input-video.gif -->
+![Geometry preview](Output/geometry_preview_sample_1.png)
 
-![Input droplet video](docs/images/input-video.gif)
+### Individual graphs — Sample 1
 
-### 2. Geometry Preview — Processed Frame
+**Contact angle vs. time**
 
-*Shows a representative frame illustrating the droplet geometry used for contact-angle analysis.*
+![Contact angle graph for Sample 1](Output/contact_angle_sample_1.png)
 
-<!-- Add your processed geometry image at docs/images/processed-geometry.png -->
+**Width vs. time**
 
-![Geometry preview](docs/images/processed-geometry.png)
+![Width graph for Sample 1](Output/width_sample_1.png)
 
-### 3. Processed Video Output
+### Mixed graphs
 
-*Demonstrates the annotated video generated after processing.*
+**Mixed contact-angle graph**
 
-<!-- Add your processed-video GIF at docs/images/processed-video.gif -->
+![Mixed contact-angle graph](Output/mixed_contact_angle.png)
 
-![Processed droplet video](docs/images/processed-video.gif)
+**Mixed width graph**
 
-### 4. Individual Graph 1
+![Mixed width graph](Output/mixed_width.png)
 
-*Insert the first representative graph generated by the application.*
+### Processed videos — Samples 2 and 3
 
-<!-- Add your first individual graph at docs/images/individual-graph-1.png -->
+![Processed video for Sample 2](Output/Sample%202.gif)
 
-![Individual graph 1](docs/images/individual-graph-1.png)
+![Processed video for Sample 3](Output/Sample%203.gif)
 
-### 5. Individual Graph 2
-
-*Insert the second representative individual graph.*
-
-<!-- Add your second individual graph at docs/images/individual-graph-2.png -->
-
-![Individual graph 2](docs/images/individual-graph-2.png)
-
-### 6. Mixed Graph 1
-
-*Insert the first mixed graph demonstrating a comparison between experiments.*
-
-<!-- Add your first mixed graph at docs/images/mixed-graph-1.png -->
-
-![Mixed graph 1](docs/images/mixed-graph-1.png)
-
-### 7. Mixed Graph 2
-
-*Insert the second mixed graph.*
-
-<!-- Add your second mixed graph at docs/images/mixed-graph-2.png -->
-
-![Mixed graph 2](docs/images/mixed-graph-2.png)
-
----
+> **GitHub video-size note:** GitHub does not display MP4 files inline in a README like it displays GIFs. The GIFs are included here for convenient previews; the original processed MP4 files can be retained locally or attached to a GitHub Release if you want to distribute them.
 
 ## Complete Workflow
-
-The application opens directly into the **Three Experiment Workflow**.
-
-The general analysis sequence is:
 
 1. Select an experiment sample.
 2. Load the corresponding input video.
@@ -128,156 +103,55 @@ The general analysis sequence is:
 6. Export the processed video and measurement CSV.
 7. Configure and generate individual graphs.
 8. Generate mixed graphs when comparing experiments.
-9. Repeat the process for the remaining samples as required.
+9. Repeat for the remaining samples as required.
 
-The workflow separates experimental inputs and outputs while providing a common interface for processing, visualization, and export.
+## Three-Experiment Workflow
 
-## 1. Three Experiment Workflow
+The main window provides access to three experiment samples. Each sample has an independent working context so its video, processing workflow, and results can be handled separately.
 
-The Three Experiment Workflow is the main entry point of Version 2. It provides access to three experiment samples from a single window.
+The **Reset Video** control allows the current sample's video workflow to be restarted when another input needs to be selected or processed. After resetting, verify the selected video and geometry before proceeding.
 
-### Sample selection
+## Input Video and Geometry Preview
 
-Choose the sample you want to work with and follow its workflow to load a video, inspect its geometry, process the data, and review the results.
+Load the experimental recording containing the droplet and solid surface. Check that the intended video is selected before continuing.
 
-Each sample has an independent working context. This allows different experimental videos or conditions to be analysed without deliberately combining their intermediate results.
+Use the geometry preview to inspect a representative frame and the geometric reference used in the measurement. The baseline represents the solid surface against which contact angles are evaluated. Inspecting the geometry before processing helps confirm that the intended droplet and surface are being analysed.
 
-### Reset Video
+## Video Processing
 
-The **Reset Video** control allows the current sample's video workflow to be restarted when you want to select or process another input. After resetting, verify the selected video and geometry before proceeding.
+Once the video and geometry have been prepared, start processing for the selected sample. The application processes the recording to produce time-dependent measurements and visual output for review.
 
-### Navigation
+The analysis concerns the droplet profile and contact regions relative to the baseline. Depending on the output view, the processed visualization can include the droplet contour, contact points, local tangent construction, contact-angle annotations, and time information.
 
-The available navigation controls let you move between the stages of the sample workflow. Follow the sequence from video input and geometry inspection to processing, output review, and graphing.
+The application provides:
 
-**Purpose:** Keep multiple experiments organized and make it easier to analyse and compare separate experimental conditions.
+- **Left contact angle:** the angle evaluated at the left contact region.
+- **Right contact angle:** the angle evaluated at the right contact region.
+- **Average contact angle:** the average of the left and right contact-angle measurements.
 
-## 2. Input Video and Geometry Preview
+## Processed Output and Data Export
 
-This stage prepares the selected experiment for processing.
+Use **Save Processed Video As** to save the processed, annotated video to a location and filename of your choice. Use **Save CSV As** to export measurement data for graph generation, data inspection, and further scientific analysis.
 
-### Input video
+Keep each exported video and CSV clearly labelled and associated with the correct sample to avoid mixing experimental results.
 
-Load the experimental recording containing the droplet and the solid surface. Check that the intended video is selected before continuing.
+## Individual Graph Generation
 
-The quality and framing of the input video influence how clearly the droplet boundary and contact region can be inspected.
+The individual-graph workflow visualizes measurements from a selected experiment. Select the intended data and available plotting options, generate the graph, and verify that it belongs to the correct sample and that the axes and plotted quantities are suitable for interpretation.
 
-### Geometry preview
+The repository currently includes the Sample 1 contact-angle and width graphs.
 
-Use the geometry or preview workflow to inspect a representative frame and the geometric reference used in the measurement.
+## Mixed Graph Generation
 
-The baseline represents the solid surface against which the contact angles are evaluated. The droplet boundary and its intersection with the baseline are important for locating the contact regions.
-
-Inspecting the geometry before processing helps confirm that the intended droplet and surface are being analysed.
-
-### Why this stage matters
-
-Contact-angle measurements depend on the relationship between the droplet profile and the solid surface. A suitable geometric reference is therefore essential to interpreting the resulting angles.
-
-The preview is used to inspect the measurement geometry; it is distinct from the final processed video generated by the application.
-
-## 3. Video Processing
-
-Once the video and geometry have been prepared, start the processing operation for the selected sample.
-
-The application processes the recording to produce time-dependent measurements and visual output for review.
-
-The analysis concerns the droplet profile and the contact regions relative to the baseline. The processed visualization can include elements such as the droplet contour, contact points, local tangent construction, contact-angle annotations, and time information, depending on the output view.
-
-### Contact-angle measurements
-
-The application provides measurements for:
-
-- **Left contact angle:** The angle evaluated at the left contact region.
-- **Right contact angle:** The angle evaluated at the right contact region.
-- **Average contact angle:** The average of the left and right contact-angle measurements.
-
-Studying these quantities over time helps reveal changes in droplet shape and wetting behaviour during the experiment.
-
-### After processing
-
-Wait for processing to complete and inspect the generated output. If it does not correspond to the intended experiment, revisit the selected video and geometry settings before running the workflow again.
-
-## 4. Processed Output and Data Export
-
-The Processed Output page provides access to the results for the current sample.
-
-### Save Processed Video As
-
-Use **Save Processed Video As** to save the processed, annotated video to a location and filename of your choice.
-
-The video provides a visual record of the analysis across the recording and can be used for reviewing results, presentations, and experimental documentation.
-
-### Save CSV As
-
-Use **Save CSV As** to export the measurement data as a CSV file.
-
-The CSV provides a tabular representation of the measurements and can be used for graph generation, data inspection, and further scientific analysis.
-
-### Back
-
-Use **Back** to return to the previous workflow stage.
-
-### Keeping outputs organized
-
-Save each video and CSV with a filename that identifies its experiment or condition. Keeping the files associated with the correct sample helps prevent accidental mixing of measurements during graph generation and comparison.
-
-## 5. Individual Graph Generation
-
-The individual-graph workflow allows the user to visualize measurements from a selected experiment.
-
-### Graph configuration
-
-Open the graph-configuration page or dialog and specify the available plotting options. Select the intended data and review the settings presented by the application before generating the plot.
-
-Where the interface provides options such as a data range or other plot parameters, ensure they correspond to the intended analysis.
-
-### Graph results
-
-After generation, inspect the graph in the results view. Verify that the plotted data belongs to the intended sample and that the axes and plotted quantities are suitable for interpretation.
-
-Individual graphs are useful for examining one experiment at a time, identifying trends, and preparing figures for reports or presentations.
-
-### Example outputs
-
-The two individual-graph slots above are intended for representative plots generated by Version 2. Captions should identify the plotted quantities, axis labels, and experimental condition.
-
-## 6. Mixed Graph Generation
-
-The mixed-graph workflow supports combined visualization of data from multiple experiments.
-
-### Workflow
+Mixed graphs support combined visualization of data from multiple experiments.
 
 1. Open the mixed-graph option.
 2. Select the experiment data and plotting options available in the dialog.
 3. Review the selected inputs and configuration.
 4. Generate the mixed graph.
-5. Inspect the result to verify that the intended experiments and quantities are being compared.
+5. Verify that the intended experiments and quantities are being compared.
 
-### Why mixed graphs are useful
-
-Individual graphs show the behaviour of a single experiment, while mixed graphs help compare trends across multiple experiments in one visualization.
-
-Comparisons should use compatible quantities, units, and data selections. Clearly identifying each experiment in the resulting figure helps make the comparison easier to interpret.
-
-Use the two mixed-graph slots above to show representative outputs from the application.
-
-## Recommended Analysis Procedure
-
-For each experiment, the following checklist provides a consistent workflow:
-
-1. Select the required sample in the Three Experiment Workflow.
-2. Load and verify the input video.
-3. Inspect the geometry preview and measurement reference.
-4. Run the video-processing workflow.
-5. Review the processed output.
-6. Save the processed video using **Save Processed Video As**.
-7. Save the measurement data using **Save CSV As**.
-8. Configure and generate individual graphs.
-9. Inspect the graph results and verify the selected experiment.
-10. Repeat for the other samples as required.
-11. Generate mixed graphs when a comparison is needed.
-12. Keep exported files clearly labelled and associated with the correct experiment.
+Comparisons should use compatible quantities, units, and data selections. Clearly identifying each experiment helps make the results easier to interpret.
 
 ## Scientific Applications
 
@@ -290,55 +164,27 @@ Dynamic contact-angle measurements can support experimental studies involving:
 - Microfluidics
 - Heat-transfer and related interfacial phenomena
 
-The application provides measurements and visualizations to support scientific investigation. Interpretation should account for image quality, experimental conditions, the chosen geometric reference, and the limitations of the measurement setup.
+Interpretation should account for image quality, experimental conditions, the chosen geometric reference, and the limitations of the measurement setup.
 
----
+## Demonstration Video
+
+The full application demonstration video is approximately **1.48 GB**. Ordinary GitHub repository files are not suitable for files above 100 MB. Upload the video as an asset on a **GitHub Release** and link it here, or use Git LFS if you specifically need the video versioned with the repository.
+
+Replace the link below once the video has been uploaded:
+
+[Watch or download the full application demonstration video](REPLACE_WITH_GITHUB_RELEASE_ASSET_URL)
 
 ## Public Demonstration Repository
 
-A public repository intended to demonstrate the application can contain the README and selected media without publishing the implementation.
+This repository is intended to demonstrate the application's workflow and representative outputs. It can contain the README, sample inputs, selected output media, CSVs, and graph images without publishing the implementation.
 
-A suggested layout is:
-
-```text
-Dynamic-Contact-Angle-Analyzer/
-├── README.md
-└── docs/
-    └── images/
-        ├── input-video.gif
-        ├── processed-geometry.png
-        ├── processed-video.gif
-        ├── individual-graph-1.png
-        ├── individual-graph-2.png
-        ├── mixed-graph-1.png
-        └── mixed-graph-2.png
-```
-
-The image paths above are placeholders. Create the `docs/images/` folder and upload your images using the matching filenames, or update the Markdown paths to match your own filenames.
-
-### Keeping the implementation private
-
-For a public, demonstration-only repository, publish only material you are comfortable making public, such as this README and selected screenshots, GIFs, and graph images.
-
-**Do not commit:**
-
-- Application source code
-- C++ or Python backend executables
-- PyInstaller `.spec` files
-- Inno Setup `.iss` scripts
-- Setup or installer executables
-- Private experimental videos or data
-- Credentials, tokens, or other secrets
+Before pushing changes, review the files staged for the Git commit. Do not commit application source code, backend executables, PyInstaller `.spec` files, Inno Setup `.iss` scripts, installers, credentials, tokens, or private experimental data unless you explicitly intend to publish them.
 
 A README and demonstration media document how the application works; they do not host the Windows desktop application as an interactive web application.
-
-Before publishing, review the files staged for the Git commit to ensure that no source code, installer, private data, or other unintended files are included.
-
----
 
 ## Author
 
 **Mayukh Paul**  
 Indian Institute of Technology Kharagpur
 
-*Dynamic Contact Angle Analyzer — Version 2*
+*Dynamic Contact Angle Analyzer*
